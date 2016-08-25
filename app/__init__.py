@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
 
-from app import get, models
+from app import tle, models
 
 scheduler = APScheduler()
 scheduler.init_app(app)
