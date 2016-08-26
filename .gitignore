@@ -27,3 +27,10 @@ pip-log.txt
 venv
 *.pyc
 build
+
+*.db
+
+#auth file
+clients.py
+
+/tmp

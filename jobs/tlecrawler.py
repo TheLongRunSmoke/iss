@@ -22,8 +22,7 @@ class TleCrawler():
 
     def getData(self):
         if (len(self.html) > 0):
-            result = self.parse(self.html)
-
+            return self.parse(self.html)
 
     def parse(self,html):
         soup = BeautifulSoup(html, "html.parser")
@@ -51,5 +50,5 @@ class TleCrawler():
     def epochToTimestamp(self,epoch):
         year = "20" + epoch[:2]
         day = epoch[2:]
-        date = datetime.datetime(int(year),1,1) + datetime.timedelta(float(day))
+        date = datetime.datetime(int(year),1,1,tzinfo=datetime.timezone.utc) + datetime.timedelta(float(day))
         return int(date.timestamp())
