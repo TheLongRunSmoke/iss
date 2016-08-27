@@ -22,8 +22,8 @@ def writeToDB(data):
     for tle in data:
         query = app.models.TleData.query.filter_by(timestamp=tle[0]).first()
         if query is None:
-            model = app.models.TleData(timestamp=tle[0], tle=tle[1], addTime=timestamp)
-            app.db.session.add(model)
+            row = app.models.TleData(timestamp=tle[0], tle=tle[1], addTime=timestamp)
+            app.db.session.add(row)
             app.db.session.commit()
         else:
             if query.tle != tle[1]:

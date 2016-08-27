@@ -16,6 +16,7 @@ class Stat(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     timestamp = db.Column(db.Integer, index = True, unique = True)
     request = db.Column(db.Integer)
+    badrequest = db.Column(db.Integer)
 
     def __repr__(self):
-        return '<Timestamp %r , request %r >' % (self.timestamp, self.request)
+        return 'From: %r : %r : %r' % (self.timestamp, self.request, self.badrequest)
