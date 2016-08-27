@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_apscheduler import APScheduler
 from flask_mail import Mail
+import os
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -29,6 +30,7 @@ if not app.debug:
 if not app.debug:
     import logging
     from logging.handlers import RotatingFileHandler
+    os.makedirs('tmp', exist_ok=True)
     file_handler = RotatingFileHandler('tmp/iss-app.log', 'a', 1 * 1024 * 1024, 10)
     file_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
     app.logger.setLevel(logging.INFO)

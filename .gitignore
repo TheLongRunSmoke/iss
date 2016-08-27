@@ -34,3 +34,4 @@ build
 clients.py
 
 /tmp
+/db_repository
