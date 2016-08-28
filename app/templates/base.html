@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" href="static/css/main.css"/>
+        {% if title %}
+    	<title>{{title}} - ISS above</title>
+    	{% else %}
+    	<title>ISS above</title>
+    	{% endif %}
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> 
+            <![endif]-->
+    </head>
+    <body>
+        <div class="blured">
+            <header>
+                <div>
+                    <a href="/"><img src="static/img/logo.png" alt="ISS above"/></a>
+                    <span>ISS above</span>
+                </div>
+            </header>
+            <section>
+            	<article>
+                {% block content %}{% endblock %}
+                </article>
+            </section>
+            <footer>
+                <a href="">Контакты</a><a href="">Разработчикам</a><span>2016</span>
+            </footer>
+        </div>
+    </body>
+</html>

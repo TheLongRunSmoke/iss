@@ -9,7 +9,7 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 mail = Mail(app)
 
-from app import tle, models, mailer
+from app import index, tle, models, mailer
 
 scheduler = APScheduler()
 scheduler.init_app(app)
