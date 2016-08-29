@@ -10,8 +10,8 @@
 	font-style: normal;
 }
 
-html { 
-  background: url(../img/background.jpg) no-repeat center top fixed; 
+html {
+  background: url(../img/background.jpg) no-repeat center top fixed;
   background-size: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -57,7 +57,7 @@ header span{
     display: inline-block;
     line-height: 72px;
     position: absolute;
-    padding-left: 28px;
+    padding: 0 0 0 28px;
 }
 
 a.badge{
@@ -81,4 +81,7 @@ footer a,span{
 
 footer span{
     float: right;
+		font-size: 12px;
+		opacity: 0.8;
+		padding: 18px 12px 6px 0;
 }
