@@ -1,4 +1,5 @@
-from app import app
 import jobs
-jobs.gettlefromproviders.run()
-app.run(debug = False)
+from app import app
+
+jobs.get_tle_from_providers.run()
+app.run(debug=True)

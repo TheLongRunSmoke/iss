@@ -29,6 +29,8 @@ venv
 build
 
 *.db
+*.iml
+*.xml
 
 #auth file
 clients.py

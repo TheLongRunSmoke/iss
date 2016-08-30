@@ -1,39 +1,56 @@
-from .clients import CLIENTS
-from flask_httpauth import HTTPBasicAuth
-from flask import abort
 from hashlib import md5
+
+from flask import abort
+from flask_httpauth import HTTPBasicAuth
+
+from .clients import CLIENTS
 from .statistics import *
-from datetime import datetime
-# clients.py must containe dictonary named CLIENTS look like this:
-#CLIENTS = {
+
+# clients.py must contain dictionary named CLIENTS look like this:
+# CLIENTS = {
 #    "<login>" : {"password": "<password md5 hash>", "keys": ["0000"]}
-#}
+# }
 
 auth = HTTPBasicAuth()
 
+
 @auth.get_password
 def get_password(username):
-    if username != None:
+    if username is not None:
         if username in CLIENTS.keys():
             user = CLIENTS[username]
             return user["password"]
     return None
 
+
 @auth.error_handler
 def unauthorized():
     nowdt = datetime.utcnow()
     stat = Statistics(nowdt)
-    stat.badRequest()
+    stat.bad_request()
     abort(403)
 
+
 @auth.hash_password
-def hash_pw(username,password):
+def hash_pw(password):
     return md5(password.encode('utf-8')).hexdigest()
 
-class Auth():
-    """docstring for ."""
-    def isAuthorized(self,login,key):
+
+class Auth:
+    """
+    Check user authenticate.
+    May be more complex, so define in separated class.
+    """
+
+    @staticmethod
+    def is_authenticate(login, key):
+        """
+        Validate key given in request.
+        :param login: user login.
+        :param key: request key.
+        :return: True if key exist, False otherwise.
+        """
         for client in CLIENTS[login]["keys"]:
-            if (key == client):
+            if key == client:
                 return True
         return False

@@ -1,5 +1,4 @@
 import os
-from jobs import gettlefromproviders
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -10,7 +9,7 @@ SQLALCHEMY_TRACK_MODIFICATIONS = True
 JOBS = [
     {
         'id': 'job1',
-        'func': 'jobs.gettlefromproviders:run',
+        'func': 'jobs.get_tle_from_providers:run',
         'args': (),
         'trigger': 'interval',
         'days': 1
@@ -21,5 +20,5 @@ MAIL_SERVER = 'localhost'
 MAIL_PORT = 25
 MAIL_USERNAME = None
 MAIL_PASSWORD = None
-# administrator list
+# administrator email list.
 ADMINS = ['thelongrunsmoke@gmail.com']
