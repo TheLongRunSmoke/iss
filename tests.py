@@ -1,10 +1,13 @@
 import os
 import unittest
 
+from coverage import coverage
+
 from app import app, db
 from app.models import TleData
 from app.tle import get_from_db
 from config import basedir
+
 
 class TestCase(unittest.TestCase):
     def setUp(self):
@@ -27,10 +30,22 @@ class TestCase(unittest.TestCase):
         db.session.add(tmp)
         db.session.commit()
         res = get_from_db(1472600200)
-        assert len(res) == 1
+        assert len(res) == 2
         print(res)
-        assert res == {1472600000: "another data"}
+        assert res == {1472600000: "another data", 1472650000: "and another data"}
 
 
 if __name__ == '__main__':
-    unittest.main()
+    cov = coverage(branch=True, omit=['venv/*', 'tests.py'])
+    cov.start()
+    try:
+        unittest.main()
+    except:
+        pass
+    cov.stop()
+    cov.save()
+    print("\n\nCoverage Report:\n")
+    cov.report()
+    print("HTML version: " + os.path.join(basedir, "tmp/coverage/index.html"))
+    cov.html_report(directory='tmp/coverage')
+    cov.erase()

@@ -16,8 +16,7 @@ def get_tle():
     stat = Statistics(now)
     authorizer = Auth()
     if authorizer.is_authenticate(auth.username(), request.headers.get('iss-key')):
-        query = get_from_db(now.timestamp())
-
+        result = get_from_db(now.timestamp())
         stat.good_request()
         return jsonify(result)
     else:
@@ -27,8 +26,11 @@ def get_tle():
 
 def get_from_db(timestamp):
     result = {}
-    # query = models.TleData.query.filter('timestamp >= ' + str(timestamp)).order_by('timestamp').all()
-    query = models.TleData.query.filter('timestamp < ' + str(timestamp)).order_by(models.TleData.timestamp.desc()).first()
+    # TODO: think about optimization for this
+    actual = models.TleData.query.filter(models.TleData.timestamp < str(timestamp))\
+        .order_by(models.TleData.timestamp.desc()).first()
+    query = models.TleData.query.filter(models.TleData.timestamp >= actual.timestamp) \
+        .order_by(models.TleData.timestamp.asc()).all()
     if query is not None:
         try:
             for row in query:
