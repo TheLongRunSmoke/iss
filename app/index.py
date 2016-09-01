@@ -2,9 +2,11 @@ import os
 from datetime import datetime
 
 from flask import render_template
+from flask import request
 from flask import send_from_directory
 
-from app import app, db
+from app import app, db, babel
+from config import LANGUAGES
 
 
 @app.route('/')
@@ -37,6 +39,11 @@ def not_found_error(error):
 def internal_error(error):
     db.session.rollback()
     return render_template('500.html', title="500", year=get_year()), 500
+
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(LANGUAGES.keys())
 
 
 def get_year():

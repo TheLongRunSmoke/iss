@@ -4,12 +4,14 @@ from flask import Flask
 from flask_apscheduler import APScheduler
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
+from flask_babel import Babel
 
 # app initialize.
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
 mail = Mail(app)
+babel = Babel(app)
 # import parts with initialized context.
 from app import index, tle, models, mailer
 # prepare scheduler.

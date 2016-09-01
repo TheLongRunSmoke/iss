@@ -1,6 +1,8 @@
 from flask import jsonify, request
+from flask.ext.sqlalchemy import get_debug_queries
 
 from app import app
+from config import DATABASE_QUERY_TIMEOUT
 from .basicauth import *
 from .statistics import *
 
@@ -27,7 +29,7 @@ def get_tle():
 def get_from_db(timestamp):
     result = {}
     # TODO: think about optimization for this
-    actual = models.TleData.query.filter(models.TleData.timestamp < str(timestamp))\
+    actual = models.TleData.query.filter(models.TleData.timestamp < str(timestamp)) \
         .order_by(models.TleData.timestamp.desc()).first()
     query = models.TleData.query.filter(models.TleData.timestamp >= actual.timestamp) \
         .order_by(models.TleData.timestamp.asc()).all()
@@ -38,3 +40,12 @@ def get_from_db(timestamp):
         except TypeError:
             result[query.timestamp] = query.tle
     return result
+
+
+@app.after_request
+def after_request(response):
+    for query in get_debug_queries():
+        if query.duration >= DATABASE_QUERY_TIMEOUT:
+            app.logger.warning("SLOW QUERY: %s\nParameters: %s\nDuration: %fs\nContext: %s\n" % (
+                query.statement, query.parameters, query.duration, query.context))
+    return response
