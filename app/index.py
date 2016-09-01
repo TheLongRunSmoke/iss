@@ -4,6 +4,7 @@ from datetime import datetime
 from flask import render_template
 from flask import request
 from flask import send_from_directory
+from flask_babel import gettext
 
 from app import app, db, babel
 from config import LANGUAGES
@@ -22,7 +23,7 @@ def favicon():
 
 @app.route('/dev')
 def dev():
-    return render_template("dev.html", title="Разработчикам", year=get_year())
+    return render_template("dev.html", title=gettext("For developers"), year=get_year())
 
 
 @app.errorhandler(403)
@@ -43,6 +44,7 @@ def internal_error(error):
 
 @babel.localeselector
 def get_locale():
+    print(request.accept_languages)
     return request.accept_languages.best_match(LANGUAGES.keys())
 
 

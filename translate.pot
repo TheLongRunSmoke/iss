@@ -1,0 +1,53 @@
+# Translations template for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-09-01 16:43+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: app/index.py:26
+msgid "Ð Ð°Ð·ÑÐ°Ð±Ð¾ÑÑÐ¸ÐºÐ°Ð¼"
+msgstr ""
+
+#: app/templates/base.html:29
+msgid "Разработчикам"
+msgstr ""
+
+#: app/templates/dev.html:3
+msgid ""
+"<b>Разработчикам</b>\n"
+"<p>Наше API отдаёт список TLE, от текущих до последних опубликованых.</p>"
+"\n"
+"<p>Если вы представляете некоммерческий проект с открытым исходным кодом,"
+" то мы можем предоставить вам доступ к API, мощностью 1000 "
+"запросов/день.</p>\n"
+"<a href=\"mailto:thelongrunsmoke@gmail.com?subject=Запрос на доступ к API"
+" проекта ISS Above\">Отправить запрос</a>\n"
+msgstr ""
+
+#: app/templates/index.html:3
+msgid ""
+"<p>Проект «ISS above» позволяет отслеживать положение <a "
+"href=\"\">Международной космической станции</a>.</p>\n"
+"<p>Мы используем находящиеся в открытом доступе данные NASA, для рассчёта"
+" положения МКС с высокой точностью.</p>\n"
+"<p>В нашем приложении, вы сможете посмотреть на трек орбиты, узнать, "
+"когда МКС будет видна из вашего местоположения,а также сможете получать "
+"уведомления о её видимости.</p>\n"
+"<p>Доступно только в Google Play&#8482;</p>\n"
+"<a class=\"badge\" href=\"\"><img class=\"badge\" src=\"static/img"
+"/google-play-badge-rus.png\" alt=\"Доступно в Google Play\"/></a>"
+msgstr ""
+
