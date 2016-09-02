@@ -13,11 +13,17 @@
             <![endif]-->
     </head>
     <body>
-        <div class="blured">
+        <div class="blur">
             <header>
-                <div>
-                    <a href="/"><img src="/static/img/logo.png" alt="ISS above"/></a>
+                <div class="logo">
+                    <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="ISS above"/></a>
                     <span>ISS above</span>
+                </div>
+                <div class="lang">
+                    <form action="#" method="POST">
+                        <input type="hidden" value="en"/>
+                        <input type="submit" value="English"><img src="{{ url_for('static', filename='img/flag_eng.png') }}"></input>
+                    </form>
                 </div>
             </header>
             <section>
@@ -26,7 +32,7 @@
                 </article>
             </section>
             <footer>
-                <a href="/dev">{{ _("Разработчикам") }}</a><span>thelongrunsmoke&#169;{{year}}</span>
+                <a href="/dev">{{ _("For developers") }}</a><span>thelongrunsmoke&#169;{{year}}</span>
             </footer>
         </div>
     </body>

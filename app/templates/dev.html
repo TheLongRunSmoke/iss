@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-{{ _("<b>Разработчикам</b>
-<p>Наше API отдаёт список TLE, от текущих до последних опубликованых.</p>
-<p>Если вы представляете некоммерческий проект с открытым исходным кодом, то мы можем предоставить вам доступ к API, мощностью 1000 запросов/день.</p>
-<a href=\"mailto:thelongrunsmoke@gmail.com?subject=Запрос на доступ к API проекта ISS Above\">Отправить запрос</a>
-") }}
+    <b>{{ _("For developers") }}</b>
+    <p>{{ _("Our API gives a list of TLE, from the current to the last published.") }}</p>
+    <p>{{ _("If you working on a non-profit open source project, we can provide you access to the API, with limit up to 2000 requests per day.") }}</p>
+    <a href="mailto:request@tlrs.ru?subject={{ _("Request for access to the API of &quot;ISS above&quot; project") }}">{{ _("Send request") }}</a>
 {% endblock %}

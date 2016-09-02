@@ -25,7 +25,7 @@ MAIL_PASSWORD = None
 # administrator email list.
 ADMINS = ['thelongrunsmoke@gmail.com']
 LANGUAGES = {
-    'ru': 'Русский',
-    'en': 'English'
+    'en': 'English',
+    'ru': 'Русский'
 }
 

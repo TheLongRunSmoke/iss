@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-{{ _("<p>Проект «ISS above» позволяет отслеживать положение <a href=\"\">Международной космической станции</a>.</p>
-<p>Мы используем находящиеся в открытом доступе данные NASA, для рассчёта положения МКС с высокой точностью.</p>
-<p>В нашем приложении, вы сможете посмотреть на трек орбиты, узнать, когда МКС будет видна из вашего местоположения,а также сможете получать уведомления о её видимости.</p>
-<p>Доступно только в Google Play&#8482;</p>
-<a class=\"badge\" href=\"\"><img class=\"badge\" src=\"static/img/google-play-badge-rus.png\" alt=\"Доступно в Google Play\"/></a>") }}
+    <p>{{ _("The \"ISS above\" project allows you to track the <a href=\"https://en.wikipedia.org/wiki/International_Space_Station\">International Space Station</a>.") }}</p>
+    <p>{{ _("We are use publicly available NASA data to calculate the position of the ISS with high accuracy.") }}</p>
+    <p>{{ _("In our application, you will be able to see the track of the orbit, find out when the ISS will be visible from your location, and you can also be notified of its visibility.") }}</p>
+    <p>{{ _("Available only in Google Play&#8482;") }}</p>
+    <a class="badge" href="https://play.google.com/store/apps/details?id=ru.tlrs.iss"><img class="badge"
+                                                                                             src="{{ url_for('static', filename=gettext("img/google-play-badge-eng.png")) }}" alt={{ _("Available in Google Play") }}></a>
+    {#<p>{{ _("Проект «ISS above» позволяет отслеживать положение <a href=\"https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F\">Международной космической станции</a>.") }}</p>
+<p>{{ _("Мы используем находящиеся в открытом доступе данные NASA, для рассчёта положения МКС с высокой точностью.") }}</p>
+<p>{{ _("В нашем приложении, вы сможете посмотреть на трек орбиты, узнать, когда МКС будет видна из вашего местоположения,а также сможете получать уведомления о её видимости.") }}</p>
+<p>{{ _("Доступно только в Google Play&#8482;") }}</p>#}
 {% endblock %}

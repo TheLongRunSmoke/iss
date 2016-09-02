@@ -1,36 +1,35 @@
 @font-face {
-	font-family: 'PTSerifCaption';
-	src: url('../font/PTZ55F_W.eot');
-	src:
-	     url('../font/PTZ55F_W.eot?#iefix') format('embedded-opentype'),
-	     url('../font/PTZ55F_W.woff') format('woff'),
-	     url('../font/PTZ55F_W.ttf') format('truetype'),
-	     url('../font/PTZ55F_W.svg#PTSerif-Caption') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'PTSerifCaption';
+    src: url('../font/PTZ55F_W.eot');
+    src: url('../font/PTZ55F_W.eot?#iefix') format('embedded-opentype'),
+    url('../font/PTZ55F_W.woff') format('woff'),
+    url('../font/PTZ55F_W.ttf') format('truetype'),
+    url('../font/PTZ55F_W.svg#PTSerif-Caption') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html {
-  background: url(../img/background.jpg) no-repeat center top fixed;
-  background-size: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url(../img/background.jpg) no-repeat center top fixed;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-body{
+body {
     padding: 0;
     margin: 0;
-    font-family: Verdana,sans-serif;
+    font-family: Verdana, sans-serif;
     font-size: 14px;
     line-height: 1.6;
 }
 
-.blured{
+.blur {
     width: 600px;
     margin: auto;
-    background-image:  url(../img/background-blur.jpg);
+    background-image: url(../img/background-blur.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center top;
@@ -40,18 +39,18 @@ body{
     box-shadow: #000 0 0 20px
 }
 
-header, section, footer{
+header, section, footer {
     width: 600px;
     margin: 0 auto;
     padding: 0;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
 }
 
-header{
+header {
     height: 72px;
 }
 
-header span{
+header span {
     font-family: PTSerifCaption, serif;
     font-size: 28px;
     display: inline-block;
@@ -60,28 +59,50 @@ header span{
     padding: 0 0 0 28px;
 }
 
-a.badge{
+.logo {
+    width: 50%;
+    display: inline-block;
+}
+
+.lang {
+    float: right;
+    padding: 8px;
+}
+
+form input[type="submit"] {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+form input[type="submit"] img {
+    position: relative;
+    top: 3px;
+}
+
+a.badge {
     display: block;
     margin: auto;
     width: 240px;
 }
 
-article{
+article {
     padding: 12px;
 }
 
-span, p{
+span, p {
     cursor: default;
 }
 
-footer a,span{
+footer a, span {
     padding: 12px;
     display: inline-block;
 }
 
-footer span{
+footer span {
     float: right;
-		font-size: 12px;
-		opacity: 0.8;
-		padding: 18px 12px 6px 0;
+    font-size: 12px;
+    opacity: 0.8;
+    padding: 18px 12px 6px 0;
 }

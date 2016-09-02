@@ -8,7 +8,7 @@ from flask_babel import gettext
 
 from app import app, db, babel
 from config import LANGUAGES
-
+from flask import make_response
 
 @app.route('/')
 def index():
@@ -44,10 +44,19 @@ def internal_error(error):
 
 @babel.localeselector
 def get_locale():
+    lang = request.cookies.get('lang')
+    if lang is None:
+        lang = request.accept_languages.best_match(LANGUAGES.keys())
+        return request.accept_languages.best_match(LANGUAGES.keys())
+
+
+@app.before_request
+def before():
+
     print(request.accept_languages)
-    return request.accept_languages.best_match(LANGUAGES.keys())
 
 
 def get_year():
     now = datetime.utcnow()
     return now.year
+
