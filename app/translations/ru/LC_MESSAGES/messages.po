@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-02 15:54+0700\n"
-"PO-Revision-Date: 2016-09-02 14:55+0600\n"
+"POT-Creation-Date: 2016-09-03 17:48+0700\n"
+"PO-Revision-Date: 2016-09-03 16:52+0600\n"
 "Last-Translator: \n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "X-Generator: Poedit 1.8.8\n"
 
-#: app/index.py:26 app/templates/base.html:29 app/templates/dev.html:3
+#: app/index.py:26 app/templates/base.html:40 app/templates/dev.html:3
 msgid "For developers"
 msgstr "Разработчикам"
 
@@ -81,13 +81,13 @@ msgstr "Отправить запрос"
 
 #: app/templates/index.html:3
 msgid ""
-"The \"ISS above\" project allows you to track the <a href=\"https://en."
-"wikipedia.org/wiki/International_Space_Station\">International Space "
-"Station</a>."
+"The \"ISS above\" project allows you to track the <a target=\"_blank\" "
+"href=\"https://en.wikipedia.org/wiki/International_Space_Station"
+"\">International Space Station</a>."
 msgstr ""
-"Проект «ISS above» позволяет отслеживать положение <a href=\"https://ru."
-"wikipedia.org/wiki/Международная_космическая_станция\">Международной "
-"космической станции</a>."
+"Проект «ISS above» позволяет отслеживать положение <a target=\"_blank\" "
+"href=\"https://ru.wikipedia.org/wiki/Международная_космическая_станция"
+"\">Международной космической станции</a>."
 
 #: app/templates/index.html:4
 msgid ""
@@ -121,3 +121,12 @@ msgstr "Доступно в Google Play"
 
 #~ msgid "Request for access to the API of \"ISS above\" project"
 #~ msgstr "Запрос достуа к API проекта \\«ISS Above\\»"
+
+#~ msgid ""
+#~ "The \"ISS above\" project allows you to track the <a href=\"https://en."
+#~ "wikipedia.org/wiki/International_Space_Station\">International Space "
+#~ "Station</a>."
+#~ msgstr ""
+#~ "Проект «ISS above» позволяет отслеживать положение <a href=\"https://"
+#~ "ru.wikipedia.org/wiki/Международная_космическая_станция"
+#~ "\">Международной космической станции</a>."

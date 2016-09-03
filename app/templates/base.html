@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
-        {% if title %}
-    	<title>{{title}} | ISS above</title>
-    	{% else %}
-    	<title>ISS above</title>
-    	{% endif %}
-        <!--[if lt IE 9]>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+    {% if title %}
+        <title>{{ title }} | ISS above</title>
+    {% else %}
+        <title>ISS above</title>
+    {% endif %}
+    <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <![endif]-->
-    </head>
-    <body>
-        <div class="blur">
-            <header>
-                <div class="logo">
-                    <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="ISS above"/></a>
-                    <span>ISS above</span>
-                </div>
-                <div class="lang">
-                    <form action="#" method="POST">
-                        <input type="hidden" value="en"/>
-                        <input type="submit" value="English"><img src="{{ url_for('static', filename='img/flag_eng.png') }}"></input>
-                    </form>
-                </div>
-            </header>
-            <section>
-            	<article>
-                {% block content %}{% endblock %}
-                </article>
-            </section>
-            <footer>
-                <a href="/dev">{{ _("For developers") }}</a><span>thelongrunsmoke&#169;{{year}}</span>
-            </footer>
+</head>
+<body>
+<div class="blur">
+    <header>
+        <div class="logo">
+            <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="ISS above"/></a>
+            <span>ISS above</span>
         </div>
-    </body>
+        <div class="lang">
+            <form action="#" method="POST">
+                {% if lang != "ru" %}
+                    <input type="hidden" value="ru"/>
+                    <input type="submit" class="rus" value="Русский"/>
+                {% else %}
+                    <input type="hidden" value="en"/>
+                    <input type="submit" class="eng" value="English"/>
+                {% endif %}
+            </form>
+        </div>
+    </header>
+    <section>
+        <article>
+            {% block content %}{% endblock %}
+        </article>
+    </section>
+    <footer>
+        <a href="/dev">{{ _("For developers") }}</a><span>thelongrunsmoke&#169;{{ year }}</span>
+    </footer>
+</div>
+</body>
 </html>

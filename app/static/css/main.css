@@ -18,6 +18,10 @@ html {
     background-size: cover;
 }
 
+a{
+    color: #014378;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -53,6 +57,7 @@ header {
 header span {
     font-family: PTSerifCaption, serif;
     font-size: 28px;
+    color: #111;
     display: inline-block;
     line-height: 72px;
     position: absolute;
@@ -69,16 +74,20 @@ header span {
     padding: 8px;
 }
 
-form input[type="submit"] {
-    background: none;
+form input[type="submit"]{
+    color: #014378;
+    text-decoration: underline;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 0 4px 0 20px;
 }
 
-form input[type="submit"] img {
-    position: relative;
-    top: 3px;
+form input[type="submit"].eng{
+    background: url("../img/flag_eng.png") no-repeat left center;
+}
+
+form input[type="submit"].rus{
+    background: url("../img/flag_rus.png") no-repeat left center;
 }
 
 a.badge {
@@ -96,7 +105,7 @@ span, p {
 }
 
 footer a, span {
-    padding: 12px;
+    padding: 16px 12px 8px 12px;
     display: inline-block;
 }
 
