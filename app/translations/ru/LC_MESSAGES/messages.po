@@ -7,20 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-09-03 17:48+0700\n"
-"PO-Revision-Date: 2016-09-03 16:52+0600\n"
+"POT-Creation-Date: 2016-09-04 16:58+0700\n"
+"PO-Revision-Date: 2016-09-04 16:03+0600\n"
 "Last-Translator: \n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 "X-Generator: Poedit 1.8.8\n"
 
-#: app/index.py:26 app/templates/base.html:40 app/templates/dev.html:3
+#: app/index.py:36 app/templates/base.html:40 app/templates/dev.html:3
 msgid "For developers"
 msgstr "Разработчикам"
 
@@ -29,9 +28,7 @@ msgid "Forbidden"
 msgstr "Доступ запрещён"
 
 #: app/templates/403.html:4
-msgid ""
-"You don't have the permission to access the requested resource. It is "
-"either read-protected or not readable by the server."
+msgid "You don't have the permission to access the requested resource. It is either read-protected or not readable by the server."
 msgstr "У вас недостаточно прав для доступа к этой странице."
 
 #: app/templates/404.html:3
@@ -39,37 +36,24 @@ msgid "Not Found"
 msgstr "Страница не найдена"
 
 #: app/templates/404.html:4
-msgid ""
-"The requested URL was not found on the server. If you entered the URL "
-"manually please check your spelling and try again."
-msgstr ""
-"Запрошенный URL не найден на сервере. Если вы ввели URL вручную, "
-"пожалуйста, проверьте правильность написания и повторите попытку."
+msgid "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again."
+msgstr "Запрошенный URL не найден на сервере. Если вы ввели URL вручную, пожалуйста, проверьте правильность написания и повторите попытку."
 
 #: app/templates/500.html:3
 msgid "Internal Server Error"
 msgstr "Внутренняя ошибка сервера"
 
 #: app/templates/500.html:4
-msgid ""
-"The server encountered an internal error and was unable to complete your "
-"request. Either the server is overloaded or there is an error in the "
-"application."
-msgstr ""
-"Сервер обнаружил внутреннюю ошибку и не смог выполнить ваш запрос. "
-"Возможно сервер перегружен. Попробуйте позже."
+msgid "The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application."
+msgstr "Сервер обнаружил внутреннюю ошибку и не смог выполнить ваш запрос. Возможно сервер перегружен. Попробуйте позже."
 
 #: app/templates/dev.html:4
 msgid "Our API gives a list of TLE, from the current to the last published."
 msgstr "Наше API отдаёт список TLE, от текущих до последних опубликованных."
 
 #: app/templates/dev.html:5
-msgid ""
-"If you working on a non-profit open source project, we can provide you "
-"access to the API, with limit up to 2000 requests per day."
-msgstr ""
-"Если вы представляете некоммерческий проект с открытым исходным кодом, то "
-"мы можем предоставить вам доступ к API, мощностью до 2000 запросов в день."
+msgid "If you working on a non-profit open source project, we can provide you access to the API, with limit up to 2000 requests per day."
+msgstr "Если вы представляете некоммерческий проект с открытым исходным кодом, то мы можем предоставить вам доступ к API, мощностью до 2000 запросов в день."
 
 #: app/templates/dev.html:6
 msgid "Request for access to the API of &quot;ISS above&quot; project"
@@ -80,32 +64,16 @@ msgid "Send request"
 msgstr "Отправить запрос"
 
 #: app/templates/index.html:3
-msgid ""
-"The \"ISS above\" project allows you to track the <a target=\"_blank\" "
-"href=\"https://en.wikipedia.org/wiki/International_Space_Station"
-"\">International Space Station</a>."
-msgstr ""
-"Проект «ISS above» позволяет отслеживать положение <a target=\"_blank\" "
-"href=\"https://ru.wikipedia.org/wiki/Международная_космическая_станция"
-"\">Международной космической станции</a>."
+msgid "The \"ISS above\" project allows you to track the <a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/International_Space_Station\">International Space Station</a>."
+msgstr "Проект «ISS above» позволяет отслеживать положение <a target=\"_blank\" href=\"https://ru.wikipedia.org/wiki/Международная_космическая_станция\">Международной космической станции</a>."
 
 #: app/templates/index.html:4
-msgid ""
-"We are use publicly available NASA data to calculate the position of the "
-"ISS with high accuracy."
-msgstr ""
-"Мы используем находящиеся в открытом доступе данные NASA, для расчета "
-"положения МКС с высокой точностью."
+msgid "We are use publicly available NASA data to calculate the position of the ISS with high accuracy."
+msgstr "Мы используем находящиеся в открытом доступе данные NASA, для расчета положения МКС с высокой точностью."
 
 #: app/templates/index.html:5
-msgid ""
-"In our application, you will be able to see the track of the orbit, find "
-"out when the ISS will be visible from your location, and you can also be "
-"notified of its visibility."
-msgstr ""
-"В нашем приложении, вы сможете посмотреть на трек орбиты, узнать, когда "
-"МКС будет видна из вашего местоположения,а также сможете получать "
-"уведомления о её видимости."
+msgid "In our application, you will be able to see the track of the orbit, find out when the ISS will be visible from your location, and you can also be notified of its visibility."
+msgstr "В нашем приложении, вы сможете посмотреть на трек орбиты, узнать, когда МКС будет видна из вашего местоположения,а также сможете получать уведомления о её видимости."
 
 #: app/templates/index.html:6
 msgid "Available only in Google Play&#8482;"
@@ -119,14 +87,16 @@ msgstr "img/google-play-badge-rus.png"
 msgid "Available in Google Play"
 msgstr "Доступно в Google Play"
 
+#: app/templates/maintenance.html:32
+msgid "Maintenance in progress"
+msgstr "Технические работы"
+
+#: app/templates/maintenance.html:33
+msgid "&quot;ISS above&quot; is under maintenance now. We should back shortly. Thanks for your patience."
+msgstr "Проект «ISS above» в процессе технического обслуживания. Мы скоро закончим. Спасибо за терпение."
+
 #~ msgid "Request for access to the API of \"ISS above\" project"
 #~ msgstr "Запрос достуа к API проекта \\«ISS Above\\»"
 
 #~ msgid ""
-#~ "The \"ISS above\" project allows you to track the <a href=\"https://en."
-#~ "wikipedia.org/wiki/International_Space_Station\">International Space "
-#~ "Station</a>."
 #~ msgstr ""
-#~ "Проект «ISS above» позволяет отслеживать положение <a href=\"https://"
-#~ "ru.wikipedia.org/wiki/Международная_космическая_станция"
-#~ "\">Международной космической станции</a>."

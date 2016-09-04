@@ -29,3 +29,4 @@ LANGUAGES = {
     'ru': 'Русский'
 }
 
+MAINTENANCE_MODE = False
