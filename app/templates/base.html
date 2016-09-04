@@ -20,12 +20,12 @@
             <span>ISS above</span>
         </div>
         <div class="lang">
-            <form action="#" method="POST">
+            <form action="/" method="POST">
                 {% if lang != "ru" %}
-                    <input type="hidden" value="ru"/>
+                    <input name="lang" type="hidden" value="ru"/>
                     <input type="submit" class="rus" value="Русский"/>
                 {% else %}
-                    <input type="hidden" value="en"/>
+                    <input name="lang" type="hidden" value="en"/>
                     <input type="submit" class="eng" value="English"/>
                 {% endif %}
             </form>

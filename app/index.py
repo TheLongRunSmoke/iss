@@ -1,6 +1,7 @@
 import os
 from datetime import datetime
 
+from flask import make_response
 from flask import render_template
 from flask import request
 from flask import send_from_directory
@@ -8,11 +9,14 @@ from flask_babel import gettext
 
 from app import app, db, babel
 from config import LANGUAGES
-from flask import make_response
 
-@app.route('/')
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template("index.html", year=get_year())
+    print("index()")
+    resp = make_response(render_template("index.html", lang=get_language(), year=get_year()))
+    resp = update_cookies(resp)
+    return resp
 
 
 @app.route('/favicon.ico')
@@ -23,7 +27,10 @@ def favicon():
 
 @app.route('/dev')
 def dev():
-    return render_template("dev.html", title=gettext("For developers"), year=get_year())
+    resp = make_response(
+        render_template("dev.html", title=gettext("For developers"), lang=get_language(), year=get_year()))
+    resp = update_cookies(resp)
+    return resp
 
 
 @app.errorhandler(403)
@@ -44,19 +51,33 @@ def internal_error(error):
 
 @babel.localeselector
 def get_locale():
-    lang = request.cookies.get('lang')
-    if lang is None:
-        lang = request.accept_languages.best_match(LANGUAGES.keys())
-        return request.accept_languages.best_match(LANGUAGES.keys())
-
-
-@app.before_request
-def before():
-
-    print(request.accept_languages)
+    return get_language()
 
 
 def get_year():
     now = datetime.utcnow()
     return now.year
 
+
+def get_language():
+    result = "en"
+    lang_cookies = request.cookies.get('lang')
+    if lang_cookies is None:
+        result = request.accept_languages.best_match(LANGUAGES.keys())
+    else:
+        post = request.form
+        if len(post) is 0:
+            result = lang_cookies
+        else:
+            lang_post = post.get('lang', default=None)
+            if lang_post is not None:
+                result = lang_post
+    return result
+
+
+def update_cookies(resp):
+    lang_cookies = request.cookies.get('lang')
+    lang_actual = get_language()
+    if lang_cookies != lang_actual:
+        resp.set_cookie('lang', lang_actual)
+    return resp
