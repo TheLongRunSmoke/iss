@@ -1,0 +1,13 @@
+
+syntax = "proto3";
+
+message TleList{
+
+    repeated TLE tle = 1;
+
+    message TLE {
+        string epochTimestamp = 1;
+        string tleString = 2;
+    }	
+}
+

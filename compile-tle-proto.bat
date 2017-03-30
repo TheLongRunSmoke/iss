@@ -1,0 +1,1 @@
+protoc -I=C:\Workspace\iss\app\ --python_out=C:\Workspace\iss\app\ C:\Workspace\iss\app\tle.proto
