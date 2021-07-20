@@ -29,4 +29,4 @@ sqlalchemy-migrate==0.10.0
 sqlparse==0.2.1
 Tempita==0.5.2
 tzlocal==1.2.2
-Werkzeug==0.12.1
+Werkzeug==0.15.3
